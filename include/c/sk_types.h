@@ -176,6 +176,8 @@ typedef struct sk_paint_t sk_paint_t;
     cubic curves.
 */
 typedef struct sk_path_t sk_path_t;
+typedef struct sk_path_effect_t sk_path_effect_t;
+typedef struct sk_dash_path_effect_t sk_dash_path_effect_t;
 /**
     A sk_picture_t holds recorded canvas drawing commands to be played
     back at a later time.

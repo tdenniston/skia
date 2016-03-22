@@ -26,6 +26,7 @@
 #include "../../include/effects/SkDropShadowImageFilter.h"
 #include "../../include/effects/SkDisplacementMapEffect.h"
 #include "../../include/effects/SkMatrixConvolutionImageFilter.h"
+#include "../../include/effects/SkDashPathEffect.h"
 
 class SkFILEStream;
 class SkMemoryStream;
@@ -246,6 +247,22 @@ static inline const SkPoint3& AsPoint3(const sk_point3_t& p) {
 
 static inline const SkPoint3* AsPoint3(const sk_point3_t* p) {
     return reinterpret_cast<const SkPoint3*>(p);
+}
+
+static inline const SkPathEffect* AsPathEffect(const sk_path_effect_t* p) {
+    return reinterpret_cast<const SkPathEffect*>(p);
+}
+
+static inline SkPathEffect* AsPathEffect(sk_path_effect_t* p) {
+    return reinterpret_cast<SkPathEffect*>(p);
+}
+
+static inline const SkDashPathEffect* AsDashPathEffect(const sk_dash_path_effect_t* p) {
+    return reinterpret_cast<const SkDashPathEffect*>(p);
+}
+
+static inline SkDashPathEffect* AsDashPathEffect(sk_dash_path_effect_t* p) {
+    return reinterpret_cast<SkDashPathEffect*>(p);
 }
 
 static inline const SkImageFilter::CropRect& AsImageFilterCropRect(const sk_imagefilter_croprect_t& p) {

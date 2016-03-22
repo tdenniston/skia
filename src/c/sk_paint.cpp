@@ -250,3 +250,11 @@ float sk_paint_measure_utf16_text(sk_paint_t* cpaint, const void* text, size_t l
     return ret;
 }
 
+sk_path_effect_t* sk_paint_get_path_effect(sk_paint_t* cpaint) {
+    return (sk_path_effect_t*) AsPaint(cpaint)->getPathEffect();
+}
+
+void sk_paint_set_path_effect(sk_paint_t* cpaint, sk_path_effect_t* effect) {
+    AsPaint(cpaint)->setPathEffect(AsPathEffect(effect));
+}
+

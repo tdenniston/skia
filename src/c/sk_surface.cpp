@@ -22,6 +22,7 @@
 #include "sk_path.h"
 #include "sk_picture.h"
 #include "sk_surface.h"
+#include "sk_dash_path_effect.h"
 #include "sk_types_priv.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -1307,3 +1308,18 @@ const uint8_t* sk_data_get_bytes(const sk_data_t* cdata) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
+
+sk_dash_path_effect_t* sk_dash_path_effect_create(const float intervals[], int count, float phase) {
+    return (sk_dash_path_effect_t*)SkDashPathEffect::Create(
+        reinterpret_cast<const SkScalar*>(intervals),
+        count,
+        phase);
+}
+
+void sk_dash_path_effect_unref(sk_dash_path_effect_t* cpathEffect) { SkSafeUnref(AsDashPathEffect(cpathEffect)); }
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+

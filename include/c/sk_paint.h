@@ -206,7 +206,14 @@ SK_API float sk_paint_measure_text(const sk_paint_t* cpaint, const void* text, s
  *  Return the width of the UTF16 encoded text
  */
 SK_API float sk_paint_measure_utf16_text(sk_paint_t* cpaint, const void* text, size_t length, sk_rect_t* cbounds);
-
+/**
+ *  Return the paint's patheffect object
+ */
+SK_API sk_path_effect_t* sk_paint_get_path_effect(sk_paint_t* cpaint);
+/**
+ *  Sets the paint's patheffect object
+ */
+SK_API void sk_paint_set_path_effect(sk_paint_t* cpaint, sk_path_effect_t* effect);
 
 SK_C_PLUS_PLUS_END_GUARD
 
